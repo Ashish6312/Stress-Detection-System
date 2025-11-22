@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: stress-detection-app
+    env: python
+    region: oregon
+    plan: free
+    branch: main
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn stress_project.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: False
+      - key: ALLOWED_HOSTS
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: stress-detection-db
+          property: connectionString
+
+databases:
+  - name: stress-detection-db
+    databaseName: stress_detection
+    user: stress_user
+    plan: free
+    region: oregon
