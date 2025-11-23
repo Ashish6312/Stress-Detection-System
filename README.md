@@ -487,7 +487,7 @@ If you find this project helpful, please give it a ⭐ on GitHub!
 
 **Made with ❤️ for Mental Wellness**
 
-Visit: [Live Demo](https://your-app.onrender.com) (Update with your Render URL)
+Visit: [Live Demo](https://stress-detection-system-q3q4.onrender.com/) (Update with your Render URL)
 
 ---
 
